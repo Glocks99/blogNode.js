@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/login.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <h3>BLOGZ</h3>
+    <form action="">
+        <input type="text" placeholder="enter email" name="email" style="display: block;">
+        <br>
+        <div class="errEmail" style="color: red;"></div>
+        <br>
+        <input type="text" placeholder="enter password" name="password" style="display: block;">
+        <br>
+        <div class="errPassword" style="color: red;"></div>
+        <br>
+        <input type="submit" value="Login" class="btn">
+    </form>
+    </div>
+
+    <script>
+        const form = document.querySelector('form')
+        form.addEventListener('submit', async(e)=>{
+            e.preventDefault()
+            const email = form.email.value
+            const password = form.password.value
+            
+            //err divs
+            const errorEmail = document.querySelector('.errEmail')
+            const errorPassword = document.querySelector('.errPassword')
+            try{
+                await fetch('/postlogin', {
+                    method: "POST",
+                    headers:{"Content-Type":"application/json"},
+                    body: JSON.stringify({email,password})
+                })
+                .then(response => {
+                    response.json()
+                    .then(data => {
+                        console.log(data)
+                        if(data.user){
+                            location.assign('/')
+                        }
+                        if(data.error){
+                            errorEmail.textContent = data.error.email
+                            errorPassword.textContent = data.error.password
+                        }
+                    })
+                })
+                .catch(err => console.log(err))
+            }
+            catch(err){
+                console.log(err)
+            }
+        })
+    </script>
+</body>
+</html>

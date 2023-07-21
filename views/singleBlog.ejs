@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/single.css">
+    <title><%= title %></title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>TITLE : <%= result.title %></th>
+            <th>Action</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td><%= result.blog %></td>
+            <td><a href="/viewBlogs" class="delete" data-delete="<%= result._id %>">delete blog</a></td>
+            <td><a href="/update/<%= result._id %>">update blog</a></td>
+        </tr>
+    </table>
+
+
+    <script>
+        let deleteBtn = document.querySelector('.delete')
+        deleteBtn.addEventListener('click', ()=>{
+            const url = `/deleteBlog/${deleteBtn.dataset.delete}`
+            fetch(url,{method:"DELETE"})
+            .then(response => {
+                response.json()
+            })
+            .then(data => {
+                window.location.href = data.redirect
+            })
+            .catch(err => console.log(err))
+        })
+    </script>
+</body>
+</html>

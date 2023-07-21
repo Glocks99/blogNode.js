@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/signup.css">
+    <title>document</title>
+</head>
+<body>
+    <div class="container">
+        <h3>BLOGZ</h3>
+        <form action="/postsignup" method="post">
+            <input type="text" placeholder="enter email" name="email">
+            <input type="text" placeholder="enter password" name="password">
+            <input type="submit" value="Sign Up" class="btn">
+        </form>
+    </div>
+    
+
+    <!-- <script>
+        const form = document.querySelector('form')
+        form.addEventListener('submit', (e)=>{
+            e.preventDefault()
+            const email = form.email.value
+            const password = form.password.value
+            try{
+                fetch('/postsignup', {
+                    method:"POST",
+                    headers:{"Content-Type":"application/json"},
+                    body:JSON.stringify({email,password})
+                })
+            }
+            catch(err){
+                console.log(err)
+            }
+        })
+    </script> -->
+</body>
+</html>

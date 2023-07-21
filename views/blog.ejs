@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/blogs.css">
+    <title><%= title %></title>
+</head>
+<body>
+    <header>
+        <div class="logo">BLOGZ</div>
+        <div>
+            <a href="/logout" class="login">logout</a>
+            <a href="/blogForm" class="login">Post</a>
+        </div>
+        
+    </header>
+    <main>
+        <%result.forEach(user =>{%>
+            <div class="postCont">
+                <div class="who">
+                     <P>Username: <span>@handle</span></P>
+                     <p>Posted On &bull; <span>20/07/2023</span></p>
+                </div>
+                <div class="content">
+                 <div class="blogTitle"><span>TITLE : </span><%= user.title %></div>
+                 
+                 <div class="blogMessage">
+                    <a href="/singleBlog/<%= user._id %>">
+                    <%= user.blog %>
+                    </a>
+                 </div>
+                </div>
+             </div>
+        <%}) %>
+       
+       
+    </main>
+</body>
+</html>

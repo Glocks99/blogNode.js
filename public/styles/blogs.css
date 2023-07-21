@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #fff;
+    margin: 0 auto;
+    padding: 10px 0 10px 0;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 800px;
+}
+header .logo{
+    font-family:Cambria;
+    font-size: 40px;
+    letter-spacing: 5px;
+    font-weight: bolder;
+    color: rgba(0,0,0,0.6);
+    filter: drop-shadow(10px 10px 2px rgba(0,0,0,0.3));
+}
+header a.login{
+    padding: 10px 30px;
+    color: #111;
+    text-decoration: none;
+    background-color: rgb(230, 224, 224);
+    transition: .3s ease;
+}
+header a.login:hover{
+    background: gray;
+    color: #fff;
+}
+
+main{
+    width: 800px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin: 70px auto 10px auto;
+    padding: 10px;
+    border-right: 1px solid rgba(0,0,0,0.1);
+    border-left: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.postCont{
+    border: 1px solid #fff;
+    border-radius: 10px;
+    background: #f9f9f9;
+    /* box-shadow: 0 0 10px rgba(0,0,0,0.1); */
+    padding: 10px;
+}
+.who{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+.who p:nth-of-type(1){
+    font-weight: bold;
+    font-family: Cambria;
+    font-size: 14px;
+    color: rgba(0,0,0,0.6);;
+}
+.who p:nth-of-type(1) span{
+    font-weight: 100;
+    color: #222;
+    font-family: sans-serif;
+}
+.who p:nth-of-type(2){
+    font-family: sans-serif;
+    font-size: 14px;
+}
+.who p:nth-of-type(2) span{
+    font-family: sans-serif;
+    font-size: 12px;
+    color: rgba(0,0,0,0.3);
+    font-style: italic;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+}
+.content .blogTitle{
+    font-family: Cambria;
+    font-size: 30px;
+}
+.content .blogMessage{
+    font-size: 14px;
+    line-height: 1.5em;
+    border: 3px solid rgba(0,0,0,0.3);
+    padding: 10px;
+    width: 400px;
+    border-radius: 10px;
+}
+.content .blogMessage a{
+    color: blue;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    line-height: 30px;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+.content .blogMessage a:hover{
+    color: #111;
+}

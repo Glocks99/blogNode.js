@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/update.css">
+    <title><%= title %></title>
+</head>
+<body>
+    <div class="container">
+        <h3>UPDATE BLOG</h3>
+        <form action="/updateBlog/<%=result._id%>?_method=PUT" method="post">
+            <input type="text" name="title" value="<%= result.title %>">
+            <textarea name="blog" id="" cols="30" rows="10"><%= result.blog %></textarea>
+            <input type="submit" value="UPDATE" class="btn">
+        </form>
+    </div>
+    
+</body>
+</html>
